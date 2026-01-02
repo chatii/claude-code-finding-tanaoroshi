@@ -11,7 +11,7 @@ description: セッションログから価値ある発見を抽出し、カテ�
 
 ## 設定
 
-プロジェクトルートに `.tanaoroshi.json` があれば読み込む。なければデフォルト値を使用。
+`.claude/tanaoroshi.json` があれば読み込む。なければデフォルト値を使用。
 ```json
 {
   "outputDir": ".claude/findings",
@@ -52,7 +52,7 @@ Claude Codeに推測されては困る場合に `description` を指定する。
 
 ### 1. 設定の読み込み
 
-プロジェクトルートの `.tanaoroshi.json` を確認。なければデフォルト設定を使用。
+`.claude/tanaoroshi.json` を確認。なければデフォルト設定を使用。
 
 ### 2. 未処理のセッションログを取得
 ```bash
@@ -159,7 +159,7 @@ cat {file} | jq -r '...' | tail -n 500
 
 ### 運用
 
-- **`_etc/` に同じカテゴリが増えてきたら**: `.tanaoroshi.json` の `categories` に追加して正式なカテゴリに昇格
+- **`_etc/` に同じカテゴリが増えてきたら**: `.claude/tanaoroshi.json` の `categories` に追加して正式なカテゴリに昇格
 - **カテゴリの昇格時**: `_etc/{name}/` から `{outputDir}/{name}/` に移動し、index.md を更新
 
 ### カテゴリ名のルール

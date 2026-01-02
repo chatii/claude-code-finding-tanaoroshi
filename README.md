@@ -17,7 +17,7 @@ Claude Codeとのセッションログから価値ある発見（Findings）を�
 | 対象 | タイミング | 説明 |
 |------|-----------|------|
 | セッションログ（`.jsonl`） | 棚卸し実行時 | Claude Codeが自動生成するトランスクリプト |
-| `.tanaoroshi.json` | 棚卸し実行時 | カテゴリ設定の読み込み |
+| `.claude/tanaoroshi.json` | 棚卸し実行時 | カテゴリ設定の読み込み |
 
 ### 作成・更新
 | 対象 | タイミング | 説明 |
@@ -46,7 +46,7 @@ flowchart TD
 
     subgraph "棚卸し実行時（手動）"
         E["「棚卸しして」"] --> F[tanaoroshi Skill 起動]
-        F --> G[.tanaoroshi.json 読み込み]
+        F --> G[tanaoroshi.json 読み込み]
         G --> H[pending/*.jsonl を取得]
         H --> I{ログあり?}
         I -->|No| J[終了]
@@ -79,9 +79,10 @@ flowchart TD
 
 または `セッションログを整理して` / `発見をまとめて` でも実行可能。
 
-### 出力先
+### ディレクトリ構成
 ```
 .claude/
+├── tanaoroshi.json              # 設定ファイル
 ├── findings/                    # 発見の蓄積先
 │   ├── index.md                 # 発見の一覧
 │   ├── {category}/              # ユーザー定義カテゴリ
@@ -97,7 +98,7 @@ flowchart TD
 
 ## 設定
 
-プロジェクトルートに `.tanaoroshi.json` を作成：
+`.claude/tanaoroshi.json` を作成：
 ```json
 {
   "outputDir": ".claude/findings",
