@@ -1,0 +1,8 @@
+{
+  "name": "tanaoroshi",
+  "version": "1.0.0",
+  "description": "セッションログから価値ある発見を抽出し、プロジェクト知識として蓄積する棚卸しプラグイン",
+  "author": "chatii",
+  "license": "MIT",
+  "repository": "https://github.com/chatii/claude-code-finding-tanaoroshi"
+}
