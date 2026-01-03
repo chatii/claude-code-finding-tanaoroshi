@@ -66,9 +66,30 @@ flowchart TD
 ```
 
 ## インストール
+
+### 方法1: 手動インストール
 ```bash
 /plugin marketplace add chatii/claude-code-finding-tanaoroshi
 /plugin install tanaoroshi
+```
+
+### 方法2: プロジェクト設定で共有
+プロジェクトの `.claude/settings.json` に追加すると、チームメンバー全員が自動的に利用可能：
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "chatii-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "chatii/claude-code-finding-tanaoroshi"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "tanaoroshi@chatii-plugins": true
+  }
+}
 ```
 
 ## 使い方
