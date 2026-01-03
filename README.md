@@ -67,7 +67,7 @@ flowchart TD
 
 ## インストール
 ```bash
-/plugin marketplace add chatii/claude-code-tanaoroshi
+/plugin marketplace add chatii/claude-code-finding-tanaoroshi
 /plugin install tanaoroshi
 ```
 
